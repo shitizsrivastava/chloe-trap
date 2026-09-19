@@ -1,0 +1,173 @@
+.ss-screen { padding: 28px 32px; max-width: 900px; }
+
+.ss-summary {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 16px 0 20px;
+  padding: 14px 18px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+.ss-sum-item { display: flex; flex-direction: column; align-items: center; min-width: 70px; }
+.ss-sum-num { font-size: 28px; font-weight: 900; line-height: 1; }
+.ss-sum-lbl { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
+.ss-sum-item.critical .ss-sum-num { color: #dc2626; }
+.ss-sum-item.high     .ss-sum-num { color: #d97706; }
+.ss-sum-item.total    .ss-sum-num { color: var(--text); }
+
+.ss-clear-btn {
+  margin-left: auto;
+  padding: 5px 12px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 99px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.12s;
+}
+.ss-clear-btn:hover { background: var(--bg-tertiary); }
+
+.ss-scanning {
+  margin: 10px 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.ss-scan-bar {
+  height: 4px;
+  background: var(--border);
+  border-radius: 99px;
+  overflow: hidden;
+}
+.ss-scan-fill {
+  height: 100%;
+  background: var(--primary);
+  border-radius: 99px;
+  transition: width 0.3s ease;
+  min-width: 4px;
+}
+.ss-scanning span { font-size: 12px; color: var(--text-muted); }
+
+.ss-filter-row {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+.ss-cat-btn {
+  padding: 5px 14px;
+  border: 1px solid var(--border);
+  border-radius: 99px;
+  background: var(--bg);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.12s;
+}
+.ss-cat-btn:hover { background: var(--bg-tertiary); }
+.ss-cat-btn.active { background: var(--primary); color: white; border-color: var(--primary); }
+
+.ss-empty {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--text-secondary);
+  font-size: 15px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.ss-list { display: flex; flex-direction: column; gap: 10px; }
+
+.ss-card {
+  display: flex;
+  gap: 14px;
+  padding: 16px 18px;
+  border: 1px solid;
+  border-radius: var(--radius);
+  transition: transform 0.1s, box-shadow 0.1s;
+}
+.ss-card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+
+.ss-card-left { flex-shrink: 0; }
+.ss-card-icon { font-size: 26px; line-height: 1; display: block; margin-top: 2px; }
+
+.ss-card-body { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 6px; }
+.ss-card-top { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.ss-card-title { font-size: 14px; font-weight: 700; color: var(--text); flex: 1; min-width: 200px; }
+.ss-priority-badge {
+  font-size: 10px;
+  font-weight: 800;
+  padding: 2px 8px;
+  border-radius: 99px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  flex-shrink: 0;
+}
+.ss-cat-label {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--text-muted);
+  background: var(--bg-secondary);
+  padding: 2px 8px;
+  border-radius: 99px;
+  border: 1px solid var(--border);
+  flex-shrink: 0;
+}
+.ss-card-detail {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+.ss-card-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 4px;
+  flex-wrap: wrap;
+}
+.ss-site-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 10px;
+  border-radius: 99px;
+  border: 1px solid;
+  font-size: 11px;
+  font-weight: 700;
+}
+.ss-action-btn {
+  padding: 5px 14px;
+  border: none;
+  border-radius: 99px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.1s;
+}
+.ss-action-btn:hover { opacity: 0.85; }
+.ss-dismiss-btn {
+  margin-left: auto;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text-muted);
+  font-size: 11px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.1s;
+  flex-shrink: 0;
+}
+.ss-dismiss-btn:hover { background: #fee2e2; color: #dc2626; border-color: #fca5a5; }

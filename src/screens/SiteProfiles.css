@@ -1,0 +1,31 @@
+.sp-screen { padding: 28px 32px 40px; }
+.sp-top { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 20px; }
+.sp-top h1 { margin: 0; font-size: 22px; font-weight: 800; color: var(--text); }
+.sp-top p { margin: 4px 0 0; font-size: 13px; color: var(--text-muted); }
+
+.sp-summary { display: flex; gap: 0; background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; margin-bottom: 18px; box-shadow: var(--shadow); }
+.sp-stat { flex: 1; padding: 14px 20px; text-align: center; border-right: 1px solid var(--border); display: flex; flex-direction: column; gap: 3px; }
+.sp-stat:last-child { border-right: none; }
+.sp-stat span { font-size: 24px; font-weight: 800; color: var(--text); letter-spacing: -0.5px; }
+.sp-stat small { font-size: 11px; color: var(--text-muted); }
+
+.sp-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(380px, 1fr)); gap: 16px; }
+
+.sp-card { background: var(--bg); border: 1px solid var(--border); border-top: 3px solid var(--primary); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
+.sp-card.complete { border-color: var(--border); }
+
+.sp-card-head { display: flex; align-items: center; gap: 10px; padding: 14px 16px; border-bottom: 1px solid var(--border); }
+.sp-avatar { width: 34px; height: 34px; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-size: 12px; font-weight: 800; flex-shrink: 0; }
+.sp-card-info { display: flex; flex-direction: column; min-width: 0; flex: 1; }
+.sp-card-info strong { font-size: 14px; color: var(--text); }
+.sp-card-info span { font-size: 11px; color: var(--text-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+.sp-complete-badge { flex-shrink: 0; padding: 3px 10px; border-radius: 99px; font-size: 11px; font-weight: 700; background: var(--bg-tertiary); color: var(--text-muted); }
+.sp-complete-badge.on { background: #dcfce7; color: var(--success); }
+
+.sp-form { padding: 14px 16px; display: flex; flex-direction: column; gap: 12px; }
+.sp-input-row { display: flex; gap: 6px; }
+.sp-input-row .input { flex: 1; }
+.sp-row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.sp-textarea { resize: vertical; min-height: 60px; font-family: inherit; line-height: 1.5; }
+.sp-actions { display: flex; justify-content: flex-end; }

@@ -1,0 +1,31 @@
+.uptime-screen { padding: 28px 32px 40px; }
+.uptime-top { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 20px; }
+.uptime-top h1 { margin: 0; font-size: 22px; font-weight: 800; color: var(--text); }
+.uptime-top p { margin: 4px 0 0; font-size: 13px; color: var(--text-muted); }
+.uptime-auto-toggle { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--text-secondary); cursor: pointer; }
+.uptime-auto-toggle input { accent-color: var(--primary); cursor: pointer; }
+
+.uptime-summary { display: flex; align-items: center; gap: 16px; margin-bottom: 16px; background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 20px; box-shadow: var(--shadow); }
+.uptime-stat { display: flex; flex-direction: column; align-items: center; gap: 2px; min-width: 60px; }
+.uptime-stat span { font-size: 22px; font-weight: 800; color: var(--text); }
+.uptime-stat small { font-size: 11px; color: var(--text-muted); }
+.uptime-stat.green span { color: var(--success); }
+.uptime-stat.red span { color: var(--error); }
+.uptime-lastcheck { margin-left: auto; font-size: 12px; color: var(--text-muted); }
+
+.uptime-table-wrap { background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+.uptime-table { width: 100%; border-collapse: collapse; }
+.uptime-table th { background: var(--bg-secondary); padding: 9px 14px; text-align: left; font-size: 11px; font-weight: 700; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 1px solid var(--border); white-space: nowrap; }
+.uptime-table td { padding: 12px 14px; border-bottom: 1px solid var(--border); vertical-align: middle; }
+.uptime-table tr:last-child td { border-bottom: none; }
+.uptime-table tbody tr:hover td { background: var(--bg-secondary); }
+
+.uptime-badge { display: inline-flex; align-items: center; padding: 3px 10px; border-radius: 99px; font-size: 11px; font-weight: 600; }
+.uptime-badge.up      { background: #dcfce7; color: var(--success); }
+.uptime-badge.down    { background: #fee2e2; color: var(--error); }
+.uptime-badge.unknown { background: var(--bg-tertiary); color: var(--text-muted); }
+.uptime-badge.checking{ background: #eff6ff; color: var(--primary); }
+
+.uptime-cta { text-align: center; padding: 60px 20px; display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.uptime-cta p { font-size: 16px; font-weight: 600; color: var(--text); margin: 0; }
+.uptime-cta span { font-size: 13px; color: var(--text-muted); }

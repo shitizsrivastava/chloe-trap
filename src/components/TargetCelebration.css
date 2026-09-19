@@ -1,0 +1,35 @@
+.celebration-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+}
+.celebration-box {
+  background: var(--bg);
+  border-radius: 16px;
+  padding: 32px 36px;
+  text-align: center;
+  box-shadow: var(--shadow-md);
+  max-width: 360px;
+  animation: celebration-pop 0.35s ease;
+}
+@keyframes celebration-pop {
+  0% { transform: scale(0.85); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+.celebration-emoji { font-size: 48px; line-height: 1; margin-bottom: 8px; }
+.celebration-box h2 { margin: 0 0 12px; font-size: 22px; color: var(--text); }
+.celebration-site {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 10px;
+}
+.celebration-box p { color: var(--text-secondary); font-size: 14px; margin: 0 0 20px; }
+.celebration-actions { display: flex; gap: 10px; justify-content: center; }

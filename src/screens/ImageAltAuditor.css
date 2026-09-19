@@ -1,0 +1,45 @@
+.ia-screen { padding: 24px 32px 40px; }
+.ia-top h1 { margin: 0 0 4px; }
+.ia-top p { margin: 0; font-size: 13px; color: var(--text-muted); max-width: 720px; }
+
+.ia-controls { display: flex; align-items: center; gap: 10px; margin: 18px 0 14px; flex-wrap: wrap; }
+
+.ia-error {
+  margin-bottom: 14px; padding: 10px 14px; border-radius: 8px;
+  background: #fef2f2; border: 1px solid #fecaca; color: #dc2626; font-size: 12.5px;
+}
+
+.ia-summary { display: flex; gap: 12px; margin-bottom: 14px; }
+.ia-stat {
+  padding: 12px 18px; border: 1px solid var(--border); border-radius: 10px; background: var(--bg);
+  display: flex; flex-direction: column; gap: 2px;
+}
+.ia-stat span { font-size: 20px; font-weight: 800; color: var(--text); }
+.ia-stat small { font-size: 10.5px; color: var(--text-muted); text-transform: uppercase; letter-spacing: .04em; }
+
+.ia-filter-tabs { display: flex; gap: 6px; margin-bottom: 16px; }
+
+.ia-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 14px;
+}
+.ia-card {
+  border: 1px solid var(--border); border-radius: 12px; overflow: hidden; background: var(--bg);
+}
+.ia-card.missing { border-color: #fca5a5; }
+.ia-card img { width: 100%; height: 130px; object-fit: cover; display: block; background: var(--bg-secondary); }
+.ia-card-body { padding: 10px; display: flex; flex-direction: column; gap: 8px; }
+.ia-card-title { font-size: 12px; font-weight: 700; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.ia-alt-input {
+  width: 100%; height: 32px; padding: 0 8px; border: 1px solid var(--border); border-radius: 7px;
+  background: var(--bg-secondary); color: var(--text); font-size: 12px; outline: none;
+}
+.ia-alt-input:focus { border-color: var(--primary); }
+.ia-card-footer { display: flex; align-items: center; justify-content: space-between; }
+.ia-card-date { font-size: 10.5px; color: var(--text-muted); }
+
+.ia-empty, .ia-cta {
+  padding: 40px; text-align: center; color: var(--text-muted); font-size: 13px;
+  border: 1px dashed var(--border); border-radius: 12px; grid-column: 1 / -1;
+}
+.ia-cta span { display: block; margin-top: 6px; font-size: 12px; }

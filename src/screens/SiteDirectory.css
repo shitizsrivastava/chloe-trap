@@ -1,0 +1,162 @@
+.sd-screen {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 32px;
+}
+
+.sd-intro {
+  padding: 28px 32px 0;
+}
+
+.sd-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 18px 32px 0;
+}
+
+.sd-search {
+  flex: 1 1 200px;
+  min-width: 160px;
+  padding: 7px 10px;
+  font-size: 13px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+.sd-format-group {
+  display: flex;
+  gap: 4px;
+}
+.sd-format-btn {
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+  cursor: pointer;
+  white-space: nowrap;
+}
+.sd-format-btn.active {
+  background: var(--primary-light);
+  color: var(--primary);
+  border-color: var(--primary);
+}
+
+.sd-select-group {
+  display: flex;
+  gap: 10px;
+}
+.sd-link-btn {
+  background: none;
+  border: none;
+  color: var(--primary);
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+}
+.sd-link-btn:hover {
+  text-decoration: underline;
+}
+
+.sd-actions {
+  display: flex;
+  gap: 10px;
+  padding: 16px 32px 0;
+}
+
+.sd-copy-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  cursor: pointer;
+}
+.sd-copy-btn.primary {
+  background: var(--primary);
+  color: #fff;
+  border-color: var(--primary);
+}
+.sd-copy-btn:disabled {
+  opacity: .5;
+  cursor: not-allowed;
+}
+
+.sd-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 18px 32px 0;
+}
+
+.sd-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--bg-secondary);
+  cursor: pointer;
+}
+.sd-row.checked {
+  border-color: var(--primary);
+  background: var(--primary-light);
+}
+.sd-row input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.sd-row-text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  flex: 1;
+}
+.sd-row-name {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+.sd-row-url {
+  font-size: 12px;
+  color: var(--text-secondary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.sd-row-copy {
+  flex-shrink: 0;
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 5px 8px;
+  cursor: pointer;
+  font-size: 13px;
+}
+.sd-row-copy:hover {
+  background: var(--bg-primary);
+}
+
+.sd-empty {
+  padding: 24px;
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 13px;
+}

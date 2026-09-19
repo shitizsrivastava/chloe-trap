@@ -1,0 +1,303 @@
+.tcs-screen { padding: 28px 32px; max-width: 1200px; }
+
+.tcs-guide-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 14px 0 20px;
+}
+.tcs-guide-chip {
+  display: flex;
+  flex-direction: column;
+  padding: 8px 14px;
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+  font-size: 12px;
+  gap: 2px;
+}
+.tcs-guide-chip strong { font-size: 13px; font-weight: 800; }
+
+.tcs-controls {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  padding: 14px 16px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+.tcs-sites-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  flex: 1;
+  align-items: center;
+}
+.tcs-sites-label { font-size: 13px; font-weight: 600; color: var(--text-secondary); white-space: nowrap; }
+.tcs-site-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border: 1px solid var(--border);
+  border-radius: 99px;
+  background: var(--bg);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.12s;
+}
+.tcs-site-btn:hover { background: var(--bg-tertiary); }
+.tcs-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+
+.tcs-no-sites { padding: 40px; text-align: center; color: var(--text-muted); font-size: 14px; }
+
+.tcs-scanning-bar {
+  height: 4px;
+  background: var(--border);
+  border-radius: 99px;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+.tcs-scanning-fill {
+  height: 100%;
+  background: var(--primary);
+  border-radius: 99px;
+  transition: width 0.3s ease;
+  min-width: 4px;
+}
+
+/* Stats row */
+.tcs-stats-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+.tcs-stat {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 12px 18px;
+  min-width: 110px;
+  text-align: center;
+}
+.tcs-stat-val { font-size: 24px; font-weight: 800; color: var(--text); line-height: 1; }
+.tcs-stat-lbl { font-size: 10px; color: var(--text-muted); margin-top: 4px; }
+
+/* Site score cards */
+.tcs-site-scores {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+.tcs-site-score-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 12px 14px;
+  min-width: 200px;
+  flex: 1;
+  background: var(--bg);
+}
+.tcs-ssc-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+.tcs-ssc-avatar {
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 9px;
+  font-weight: 700;
+  color: white;
+  flex-shrink: 0;
+}
+.tcs-ssc-name { font-size: 13px; font-weight: 600; color: var(--text); flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.tcs-ssc-pct { font-size: 13px; font-weight: 800; flex-shrink: 0; }
+.tcs-ssc-bar-track {
+  height: 8px;
+  background: var(--border);
+  border-radius: 99px;
+  overflow: hidden;
+  display: flex;
+  margin-bottom: 6px;
+}
+.tcs-ssc-bar-fill { height: 100%; transition: width 0.4s ease; }
+.tcs-bar-excellent { background: #16a34a; }
+.tcs-bar-good      { background: #2563eb; }
+.tcs-bar-borderline{ background: #d97706; }
+.tcs-bar-thin      { background: #dc2626; }
+.tcs-ssc-counts { display: flex; gap: 10px; font-size: 11px; color: var(--text-muted); font-weight: 600; }
+
+/* Action banners */
+.tcs-action-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 16px;
+  background: #fff1f2;
+  border: 1px solid #fecdd3;
+  border-radius: var(--radius);
+  font-size: 13px;
+  color: #9f1239;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+.tcs-action-banner.warn { background: #fffbeb; border-color: #fde68a; color: #92400e; }
+.tcs-banner-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+
+/* Filter bar */
+.tcs-filter-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 16px 0 12px;
+  flex-wrap: wrap;
+}
+.tcs-filter-tabs { display: flex; gap: 4px; flex-wrap: wrap; }
+.tcs-tab {
+  padding: 6px 14px;
+  border: 1px solid var(--border);
+  border-radius: 99px;
+  background: var(--bg);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.12s;
+}
+.tcs-tab:hover { background: var(--bg-tertiary); }
+.tcs-tab.active { background: var(--primary); color: white; border-color: var(--primary); }
+
+.tcs-site-filter {
+  padding: 6px 10px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+  color: var(--text);
+  background: var(--bg);
+  outline: none;
+  cursor: pointer;
+}
+
+/* Table */
+.tcs-table-wrap {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: auto;
+  margin-bottom: 28px;
+}
+.tcs-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+.tcs-table thead tr {
+  background: var(--bg-secondary);
+  border-bottom: 2px solid var(--border);
+}
+.tcs-table th {
+  padding: 10px 14px;
+  text-align: left;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+.tcs-th-num { width: 40px; }
+.tcs-th-sort { cursor: pointer; user-select: none; }
+.tcs-th-sort:hover { color: var(--text); }
+
+.tcs-table tbody tr { border-bottom: 1px solid var(--border); transition: background 0.1s; }
+.tcs-table tbody tr:last-child { border-bottom: none; }
+.tcs-table tbody tr:hover { background: var(--bg-tertiary); }
+.tcs-table td { padding: 10px 14px; vertical-align: middle; }
+.tcs-td-num { color: var(--text-muted); font-size: 12px; font-weight: 600; }
+
+.tcs-row-thin      { background: #fff9f9 !important; }
+.tcs-row-borderline{ background: #fffef5 !important; }
+
+.tcs-post-title { font-weight: 600; color: var(--text); }
+.tcs-post-date  { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
+
+.tcs-site-badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 99px;
+  font-size: 10px;
+  font-weight: 700;
+  border: 1px solid transparent;
+}
+
+.tcs-wc-cell { min-width: 90px; }
+.tcs-wc-num { font-size: 15px; font-weight: 800; display: block; }
+.tcs-wc-bar-track { width: 80px; height: 4px; background: var(--border); border-radius: 99px; margin-top: 4px; }
+.tcs-wc-bar-fill { height: 100%; border-radius: 99px; min-width: 2px; }
+
+.tcs-status-badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 99px;
+  font-size: 11px;
+  font-weight: 700;
+}
+.tcs-td-action-hint { font-size: 12px; color: var(--text-secondary); white-space: nowrap; }
+
+.tcs-edit-btn {
+  padding: 4px 10px;
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.1s;
+  white-space: nowrap;
+}
+.tcs-edit-btn:hover { background: var(--primary); color: white; border-color: var(--primary); }
+
+.tcs-no-results { text-align: center; color: var(--text-muted); padding: 32px !important; font-size: 14px; }
+
+/* Tips section */
+.tcs-tips {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.tcs-tips-title {
+  padding: 12px 16px;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text);
+}
+.tcs-tips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+.tcs-tip-card {
+  display: flex;
+  gap: 12px;
+  padding: 14px 16px;
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.tcs-tip-icon { font-size: 22px; flex-shrink: 0; margin-top: 1px; }
+.tcs-tip-title { font-size: 13px; font-weight: 700; color: var(--text); margin-bottom: 3px; }
+.tcs-tip-text { font-size: 12px; color: var(--text-secondary); line-height: 1.5; }

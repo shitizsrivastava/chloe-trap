@@ -1,0 +1,13 @@
+node_modules/
+dist/
+dist-electron/
+build/
+release/
+__pycache__/
+*.pyc
+venv/
+.venv/
+*.log
+*.tsbuildinfo
+.DS_Store
+Thumbs.db

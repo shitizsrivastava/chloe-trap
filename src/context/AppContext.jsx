@@ -101,6 +101,13 @@ export function AppProvider({ children }) {
     } catch { return [] }
   })
 
+  const [publishingQueue, setPublishingQueue] = useState(() => {
+    try {
+      const raw = localStorage.getItem('ct_publishing_queue')
+      return raw ? JSON.parse(raw) : []
+    } catch { return [] }
+  })
+
   // Article Targets board: one persistent scratchpad note per site (e.g.
   // "today's target" / "next up"). Never cleared automatically — survives
   // app restarts via localStorage and only goes away when the user
@@ -164,6 +171,7 @@ export function AppProvider({ children }) {
   useEffect(() => { localStorage.setItem('ct_activity',  JSON.stringify(activity))  }, [activity])
   useEffect(() => { localStorage.setItem('ct_settings',  JSON.stringify(settings))  }, [settings])
   useEffect(() => { localStorage.setItem('ct_templates', JSON.stringify(templates)) }, [templates])
+  useEffect(() => { localStorage.setItem('ct_publishing_queue', JSON.stringify(publishingQueue)) }, [publishingQueue])
   useEffect(() => { localStorage.setItem('ct_article_targets', JSON.stringify(articleTargets)) }, [articleTargets])
 
   const setArticleTargetNote = (siteId, text) =>
@@ -242,6 +250,14 @@ export function AppProvider({ children }) {
   }
   const deleteTemplate = (id) => setTemplates(prev => prev.filter(t => t.id !== id))
   const updateTemplate = (id, updates) => setTemplates(prev => prev.map(t => t.id === id ? { ...t, ...updates } : t))
+
+  const addPublishingItem = (item) => {
+    const newItem = { ...item, id: `share-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`, createdAt: new Date().toISOString() }
+    setPublishingQueue(prev => [newItem, ...prev])
+    return newItem
+  }
+  const updatePublishingItem = (id, updates) => setPublishingQueue(prev => prev.map(item => item.id === id ? { ...item, ...updates } : item))
+  const deletePublishingItem = (id) => setPublishingQueue(prev => prev.filter(item => item.id !== id))
 
   // Pull all real posts from every connected WordPress site and replace local data.
   // Pass onlySiteId to reconcile just one site (e.g. from its Site Detail page) —
@@ -393,6 +409,7 @@ export function AppProvider({ children }) {
       activity, addActivity,
       settings, setSettings,
       templates, addTemplate, deleteTemplate, updateTemplate,
+      publishingQueue, addPublishingItem, updatePublishingItem, deletePublishingItem,
       articleTargets, setArticleTargetNote, clearArticleTargetNote, clearAllArticleTargets,
       stats,
       uptimeResults, uptimeAutoCheck, setUptimeAutoCheck, checkAllUptime,

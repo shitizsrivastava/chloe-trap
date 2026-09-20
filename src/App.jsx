@@ -38,6 +38,7 @@ import BulkSEOEditor from './screens/BulkSEOEditor'
 import ContentRefresh from './screens/ContentRefresh'
 import SocialSnippets from './screens/SocialSnippets'
 import TopicCluster from './screens/TopicCluster'
+import SocialPublishing from './screens/SocialPublishing'
 import ContentBrief from './screens/ContentBrief'
 import OrphanPosts from './screens/OrphanPosts'
 import HelpCenter from './screens/HelpCenter'
@@ -108,6 +109,7 @@ export default function App() {
       case 'content-refresh':   return <ContentRefresh navigate={navigate} />
       case 'social-snippets':   return <SocialSnippets navigate={navigate} />
       case 'social-tracker':    return <SocialTracker navigate={navigate} />
+      case 'social-publishing': return <SocialPublishing navigate={navigate} />
       case 'topic-cluster':     return <TopicCluster navigate={navigate} />
       case 'content-brief':     return <ContentBrief navigate={navigate} />
       case 'orphan-posts':      return <OrphanPosts navigate={navigate} />

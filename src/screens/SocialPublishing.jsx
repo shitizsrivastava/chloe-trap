@@ -1,6 +1,7 @@
 import React, { useMemo, useState } from 'react'
 import { useApp } from '../context/AppContext'
 import { useNotify } from '../context/NotificationContext'
+import { createSocialImage, downloadDataUrl } from '../utils/socialImage'
 import './SocialPublishing.css'
 
 const PLATFORMS = [
@@ -26,6 +27,7 @@ export default function SocialPublishing() {
   const [selectedPostId, setSelectedPostId] = useState('')
   const [platforms, setPlatforms] = useState(['x', 'facebook', 'instagram'])
   const [caption, setCaption] = useState('')
+  const [imageDataUrl, setImageDataUrl] = useState('')
   const [scheduledFor, setScheduledFor] = useState(nextRandomDate)
   const [approval, setApproval] = useState('draft')
   const [search, setSearch] = useState('')
@@ -44,6 +46,22 @@ export default function SocialPublishing() {
   const choosePost = (post) => {
     setSelectedPostId(String(post.localId))
     setCaption(`Read “${cleanTitle(post.title)}” and discover the key insights. ${post.wpLink}`)
+    setImageDataUrl('')
+  }
+
+  const generateImage = () => {
+    if (!selectedPost) return notifyInfo('Select an article first.')
+    const site = sites.find(item => item.id === selectedPost.siteId)
+    try {
+      setImageDataUrl(createSocialImage({
+        title: cleanTitle(selectedPost.title),
+        siteName: site?.name || selectedPost.siteId,
+        siteUrl: site?.url || selectedPost.wpLink,
+      }))
+      notifySuccess('Branded article image created.')
+    } catch (error) {
+      notifyInfo(error.message || 'Could not create the article image.')
+    }
   }
 
   const togglePlatform = (key) => {
@@ -60,6 +78,7 @@ export default function SocialPublishing() {
       siteId: selectedPost.siteId,
       platforms,
       caption: caption.trim() || cleanTitle(selectedPost.title),
+      imageDataUrl,
       scheduledFor: new Date(scheduledFor).toISOString(),
       approval,
       status: approval === 'approved' ? 'ready' : 'draft',
@@ -68,6 +87,7 @@ export default function SocialPublishing() {
     notifySuccess('Article added to the publishing queue.')
     setSelectedPostId('')
     setCaption('')
+    setImageDataUrl('')
     setScheduledFor(nextRandomDate())
   }
 
@@ -108,6 +128,12 @@ export default function SocialPublishing() {
           </div>
           <label className="sp-label">Caption</label>
           <textarea className="sp-textarea" rows={4} value={caption} onChange={event => setCaption(event.target.value)} placeholder="Write or generate a caption…" />
+          <div className="sp-label-row"><label className="sp-label">Article image</label><span className="sp-muted">1080 × 1080 branded card</span></div>
+          <div className="sp-image-tools">
+            <button className="btn btn-secondary btn-sm" onClick={generateImage} disabled={!selectedPost}>✨ Create image</button>
+            {imageDataUrl && <button className="btn btn-ghost btn-sm" onClick={() => downloadDataUrl(imageDataUrl, 'chloe-trap-social-image.jpg')}>Download</button>}
+          </div>
+          {imageDataUrl && <img className="sp-image-preview" src={imageDataUrl} alt="Generated article social preview" />}
           <div className="sp-label-row"><label className="sp-label">Publish to</label><span className="sp-muted">Choose one or more</span></div>
           <div className="sp-platforms">
             {PLATFORMS.map(platform => (
